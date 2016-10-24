@@ -25,4 +25,4 @@ jobs:
       file: source-code/ci/tasks/package.yml
     - put: deploy-web-app
       params:
-        manifest: concourse-spring-boot-gradle/manifest.yml
+        manifest: source-code/manifest.yml
