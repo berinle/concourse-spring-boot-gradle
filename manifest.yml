@@ -1,0 +1,10 @@
+---
+applications:
+- name: concourse-spring-boot-gradle
+  memory: 512M
+  instances: 1
+  # host: simple-java-webapp
+  # command: bin/simple-go-webapp
+  buildpack: java_buildpack
+  random-route: true
+  path: /tmp/build/get/build/libs/concourse-spring-boot-gradle-0.0.1-SNAPSHOT.jar

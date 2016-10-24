@@ -1,9 +1,19 @@
+---
 resources:
   - name: source-code
     type: git
     source:
-      uri: https://github.com/berinle/concourse-spring-boot-gradle
-      branch: master
+      uri: {{github-uri}}
+      branch: {{github-branch}}
+  - name: deploy-web-app
+    type: cf
+    source:
+      api: {{cf-api}}
+      username: {{cf-username}}
+      password: {{cf-password}}
+      organization: {{cf-org}}
+      space: {{cf-space}}
+      skip_cert_check: true
 
 jobs:
   - name: package
@@ -13,3 +23,6 @@ jobs:
     - task: package
       privileged: true
       file: source-code/ci/tasks/package.yml
+    - put: deploy-web-app
+      params:
+        manifest: concourse-spring-boot-gradle/manifest.yml
