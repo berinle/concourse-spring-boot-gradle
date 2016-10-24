@@ -2,7 +2,7 @@ resources:
   - name: source-code
     type: git
     source:
-      uri: git@github.com:berinle/concourse-spring-boot-gradle.git
+      uri: https://github.com/berinle/concourse-spring-boot-gradle
       branch: master
 
 jobs:
