@@ -23,6 +23,6 @@ jobs:
     - task: package
       privileged: true
       file: source-code/ci/tasks/package.yml
-    - put: deploy-web-app
-      params:
-        manifest: source-code/manifest.yml
+#    - put: deploy-web-app
+#      params:
+#        manifest: source-code/manifest.yml
